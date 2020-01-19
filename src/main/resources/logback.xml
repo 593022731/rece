@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<property name="LOG_HOME" value="../logs/" />
+
+	<!-- 控制台输出  -->  
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<Encoding>UTF-8</Encoding>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>>%d{yyyy-MM-dd HH:mm:ss.SSS} [%F/%L] %-5level - %msg%n</Pattern>
+		</layout>
+	</appender>
+  
+	<!-- 按照每天生成日志文件 -->  
+	<appender name="DATELOG" class="ch.qos.logback.core.rolling.RollingFileAppender">  
+		<Prudent>true</Prudent>  
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>INFO</level>   
+			<OnMismatch>DENY</OnMismatch>   
+			<OnMatch>ACCEPT</OnMatch>   
+		</filter>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+			<FileNamePattern>${LOG_HOME}/police.%d{yyyy-MM-dd}.log</FileNamePattern>  
+			<MaxHistory>90</MaxHistory>    
+		</rollingPolicy>  
+		<layout class="ch.qos.logback.classic.PatternLayout">  
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%F/%L] %-5level - %msg%n</pattern>  
+		</layout>
+	</appender>
+	 
+	<!-- 按照每天生成日志文件   错误信息 -->  
+	<appender name="DATELOG_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">  
+		<Prudent>true</Prudent>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"> 
+			<level>ERROR</level> 
+			<onMatch>ACCEPT</onMatch> 
+			<onMismatch>DENY</onMismatch> 
+		</filter>   
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+			<FileNamePattern>${LOG_HOME}/police.%d{yyyy-MM-dd}.error.log</FileNamePattern>  
+			<MaxHistory>90</MaxHistory>    
+		</rollingPolicy>  
+		<layout class="ch.qos.logback.classic.PatternLayout">  
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%F/%L] %-5level - %msg%n</pattern>  
+		</layout>  
+	</appender>
+	
+	<appender name="DATEDEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">  
+		<Prudent>true</Prudent>  
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">   
+			<level>DEBUG</level>   
+			<OnMismatch>DENY</OnMismatch>   
+			<OnMatch>ACCEPT</OnMatch>   
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+			<FileNamePattern>${LOG_HOME}/police.%d{yyyy-MM-dd}.debug.log</FileNamePattern>  
+			<MaxHistory>90</MaxHistory>    
+		</rollingPolicy>  
+		<layout class="ch.qos.logback.classic.PatternLayout">  
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%F/%L] %-5level - %msg%n</pattern>  
+		</layout>
+	</appender>
+
+	<logger name="com.paibo" additivity="false" level="DEBUG">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="DATELOG"/>
+		<appender-ref ref="DATELOG_ERROR"/>
+		<appender-ref ref="DATEDEBUG"/>
+	</logger>
+	
+</configuration>
