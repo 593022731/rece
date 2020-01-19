@@ -2,7 +2,7 @@
 大数据（多类型）内外网数据包 接收/分发平台
 仅通过改配置文件，即可实现 任意数据类型/数据包，接受/分发功能
 
-通用配置demo
+## 通用配置demo
 ```properties
 ################内外网通用配置start######################
 #所在城市编号
@@ -22,7 +22,7 @@ rece.appname=rece-net
 ################内外网通用配置end######################
 ```
 
-内网配置demo
+## 内网配置demo
 ```properties
 #内网同时分发数默认5
 #working.core=5
@@ -90,8 +90,8 @@ ftp.password=123456
 #scan.className=InnerScanPack
 ```properties
 
-外网配置demo
-```
+## 外网配置demo
+```properties
 #3.4发送文件主目录(默认不更改)
 scan.basic=/home/ftpuser
 
