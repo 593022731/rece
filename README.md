@@ -3,7 +3,7 @@
 仅通过改配置文件，即可实现 任意数据类型/数据包，接受/分发功能
 
 通用配置demo
-```
+```properties
 ################内外网通用配置start######################
 #所在城市编号
 areaCode=310100
@@ -23,7 +23,7 @@ rece.appname=rece-net
 ```
 
 内网配置demo
-```
+```properties
 #内网同时分发数默认5
 #working.core=5
 #以下为FTP连接配置为默认如果inner.ftp配置选项未配置下列项会使用默认配置
@@ -88,7 +88,7 @@ ftp.password=123456
 
 #扫描类
 #scan.className=InnerScanPack
-```
+```properties
 
 外网配置demo
 ```
