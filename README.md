@@ -1,6 +1,26 @@
 # rece
-大数据（多类型）内外网数据接收/分发平台
+大数据（多类型）内外网数据包 接收/分发平台
 仅通过改配置文件，即可实现 任意数据类型/数据包，接受/分发功能
+
+通用配置demo
+```
+################内外网通用配置start######################
+#所在城市编号
+areaCode=310100
+#RECE应用标示是外网还是内网  rece-net为外网,rece-inner为内网
+rece.appname=rece-net
+
+#ftp发送队列最大数量
+#ftp.sender.maxQueue=10000
+#外网发送ftp目录配置或内网扫描接收数据目录配置
+#凭证文件夹名(默认不更改)
+#ftp.receipt=RECEIPT
+#数据文件夹名(默认不更改)
+#ftp.fileinfo=FILEINFO
+#数据备份文件夹名(默认不更改)
+#ftp.bak=BAK
+################内外网通用配置end######################
+```
 
 内网配置demo
 ```
@@ -70,7 +90,7 @@ ftp.password=123456
 #scan.className=InnerScanPack
 ```
 
-外网配置
+外网配置demo
 ```
 #3.4发送文件主目录(默认不更改)
 scan.basic=/home/ftpuser
