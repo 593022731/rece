@@ -143,49 +143,51 @@ media.scan.hasfileinfo=true
 
 ###########################自定义配置项end#####################################
 ###########################通用配置项start#####################################
+
 #线程池数量
 working.core=1
 
 #是否递归扫描子目录(默认不更改)
-#scan.recursive=false
+scan.recursive=false
 
 #扫描目录中是否需要FILEINFO目录(默认为false不需要FILEINFO和RECEIPT目录,直接在指定扫描目录下扫描数据)(默认不更改)
-#scan.hasfileinfo=false
+scan.hasfileinfo=false
 
 #扫描的凭证文件夹名(默认不更改)
-#scan.receipt=RECEIPT
+scan.receipt=RECEIPT
 
 #扫描的实体文件夹名(默认不更改)
-#scan.fileinfo=FILEINFO
+scan.fileinfo=FILEINFO
 
 #待发送凭证文件夹名(默认不更改)
-#sender.receipt=RECEIPT
+sender.receipt=RECEIPT
 
 #待发送实体文件夹名(默认不更改)
-#sender.fileinfo=FILEINFO
+sender.fileinfo=FILEINFO
 
 #BAK文件夹名(默认不更改)
-#scan.bak=BAK
+scan.bak=BAK
 
 #是否发送BAK文件(默认不更改)
-#issendbak=true
+issendbak=true
 
 #是否备份(默认值true代表备份，其它值代表不备份直接删除)(默认不更改)
-#isbackup=true
+isbackup=true
 
 #打包图片最大数量(默认30个图片一个包)(默认不更改)
-#scan.piccount=30
+scan.piccount=30
 
 #备份成功文件夹名(默认不更改)
-#backup.success=SUCCESS
+backup.success=SUCCESS
 
 #备份错误文件夹名(默认不更改)
-#backup.fail=FAILED
+backup.fail=FAILED
 
 ###########################通用配置项end#####################################
 
 ###########################默认不能更改的配置项start#####################################
 #系统默认提供的数据扫描工具类
+
 #音视频通用扫描类
 media.scan.className=ScanMediaPack
 #图片通用扫描类
