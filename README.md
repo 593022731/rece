@@ -88,7 +88,7 @@ ftp.password=123456
 
 #扫描类
 #scan.className=InnerScanPack
-```properties
+```
 
 ## 外网配置demo
 ```properties
